@@ -8,57 +8,61 @@ import {
 } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import GlassSurface from "../utilities/GlassSurface";
-import DarkMode from "@/utilities/DarkMode";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [useGlass, setUseGlass] = useState(false); // user’s choice
 
-  // const [darkMode, setDarkMode] = useState(false);
-
-  // useEffect(() => {
-  //   const savedTheme = localStorage.getItem("theme");
-  //   if (savedTheme === "dark") {
-  //     setDarkMode(true);
-  //     document.documentElement.setAttribute("data-theme", "dark");
-  //   } else {
-  //     document.documentElement.setAttribute("data-theme", "light");
-  //   }
-  // }, []);
-
-  // const toggleTheme = () => {
-  //   if (darkMode) {
-  //     document.documentElement.setAttribute("data-theme", "light");
-  //     localStorage.setItem("theme", "light");
-  //   } else {
-  //     document.documentElement.setAttribute("data-theme", "dark");
-  //     localStorage.setItem("theme", "dark");
-  //   }
-  //   setDarkMode(!darkMode);
-  // };
-
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
-    return savedTheme === "dark";
+    if (savedTheme === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      return true;
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+      return false;
+    }
   });
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const isDark = savedTheme === "dark";
-
-    document.documentElement.setAttribute(
-      "data-theme",
-      isDark ? "dark" : "light"
-    );
-  }, []);
-
   const toggleTheme = () => {
-    const newTheme = darkMode ? "light" : "dark";
+    const root = document.documentElement;
+    root.classList.add("theme-transition");
 
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-    setDarkMode(!darkMode);
+    // Determine the new theme first
+    const newTheme = darkMode ? "light" : "dark";
+    const targetColor = newTheme === "dark" ? "#0a0a0d" : "#f6f9fa";
+
+    // Create overlay div
+    const overlay = document.createElement("div");
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100vw";
+    overlay.style.height = "100vh";
+    overlay.style.backgroundColor = targetColor; // ← target theme
+    overlay.style.clipPath = "circle(0% at 100% 0%)"; // start top-right
+    overlay.style.zIndex = "9999";
+    overlay.style.pointerEvents = "none";
+    overlay.style.transition = "clip-path 1s ease-in-out"; // visible duration
+
+    document.body.appendChild(overlay);
+
+    // Start animation
+    setTimeout(() => {
+      overlay.style.clipPath = "circle(200% at 100% 0%)"; // expand fully
+    }, 10);
+
+    // After animation, set theme and remove overlay
+    setTimeout(() => {
+      root.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      setDarkMode(!darkMode);
+
+      document.body.removeChild(overlay);
+      root.classList.remove("theme-transition");
+    }, 710);
   };
+
   const menuItems = [
     {
       href: "/",
@@ -155,13 +159,17 @@ const Navbar = () => {
           onClick={toggleTheme}
           className="flex rounded-full p-2 items-center gap-2 text-primary hover:cursor-pointer hover:bg-toggle-hover hover:transition-all duration-500"
         >
-          {darkMode ? (
-            <LucideMoon width={18} height={18} strokeWidth={2} />
-          ) : (
-            <LucideSun width={18} height={18} strokeWidth={2} />
-          )}
+          <span
+            id="theme-icon"
+            className={`icon-animate ${darkMode ? "moon" : "sun"}`}
+          >
+            {darkMode ? (
+              <LucideMoon width={18} height={18} strokeWidth={2} />
+            ) : (
+              <LucideSun width={18} height={18} strokeWidth={2} />
+            )}
+          </span>
         </button>
-        {/* <DarkMode /> */}
       </nav>
 
       <nav className="sm:hidden">
@@ -170,14 +178,19 @@ const Navbar = () => {
             SS
           </a>
           <button
-            onClick={() => setDarkMode(!darkMode)}
+            onClick={toggleTheme}
             className="backdrop-blur-lg border-1 flex-center rounded-full h-10 w-10 z-50 text-primary border-carousel-border"
           >
-            {darkMode ? (
-              <LucideMoon width={18} height={18} strokeWidth={2} />
-            ) : (
-              <LucideSun width={18} height={18} strokeWidth={2} />
-            )}
+            <span
+              id="theme-icon"
+              className={`icon-animate ${darkMode ? "moon" : "sun"}`}
+            >
+              {darkMode ? (
+                <LucideMoon width={18} height={18} strokeWidth={2} />
+              ) : (
+                <LucideSun width={18} height={18} strokeWidth={2} />
+              )}
+            </span>
           </button>
           <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-10 bg-gradient-to-b from-nav-gradient to-transparent"></div>
           <div className="fixed top-4 right-16 z-50">

@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./layout/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import DarkMode from "./utilities/DarkMode";
 
 
 const App = () => {
