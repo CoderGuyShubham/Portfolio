@@ -3,6 +3,7 @@ import CircularText from "../../utilities/CircularText";
 import { ArrowUpRight } from "lucide-react";
 import Button from "../../utilities/Button";
 import { Link } from "react-router-dom";
+import { images } from "@/assets/assets"
 
 const AboutHeader = () => {
   return (
@@ -12,7 +13,7 @@ const AboutHeader = () => {
           <div className="relative w-full sm:w-1/2">
             <div className=" w-full overflow-hidden rounded-b-full aspect-3/4 ">
               <img
-                src="../src/assets/dp2.jpg"
+                src={images.dp2}
                 // width={400}
                 // height={600}
                 alt="profile"

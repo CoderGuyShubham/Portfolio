@@ -1,3 +1,5 @@
+import { images } from "@/assets/assets";
+
 export default function ProjectGrid() {
   const projects = [
     {
@@ -5,7 +7,7 @@ export default function ProjectGrid() {
       category: "Development",
       year: 2025,
       bg: "bg-yellow-100",
-      img: "../src/assets/Imagify.png",
+      img: images.imagify,
       link: "https://imagify-now.netlify.app",
     },
     {
@@ -13,7 +15,7 @@ export default function ProjectGrid() {
       category: "Development & Design",
       year: 2024,
       bg: "bg-pink-200",
-      img: "../src/assets/Zentry.png",
+      img: images.zentry,
       link: "https://notmodern.vercel.app",
     },
     {
@@ -21,7 +23,7 @@ export default function ProjectGrid() {
       category: "Development & Design",
       year: 2024,
       bg: "bg-neutral-200",
-      img: "../src/assets/Imagify.png",
+      img: images.imagify,
       link: "https://imagify-now.netlify.app",
     },
     {
@@ -29,7 +31,7 @@ export default function ProjectGrid() {
       category: "Development & Design",
       year: 2024,
       bg: "bg-green-200",
-      img: "../src/assets/Zentry.png",
+      img: images.zentry,
       link: "https://notmodern.vercel.app",
     },
   ];

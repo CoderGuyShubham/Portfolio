@@ -20,6 +20,10 @@ import reactjs from "./React.js.svg";
 import redux from "./Redux.svg";
 import tailwindcss from "./TailwindCSS.svg";
 import typescript from "./TypeScript.svg";
+import dp2 from "./dp2.jpg";
+import imagify from "./Imagify.png";
+import zentry from "./Zentry.png";
+
 
 export const assets = [
   { title: "Angular", src: angular },
@@ -45,3 +49,9 @@ export const assets = [
   { title: "Tailwind CSS", src: tailwindcss },
   { title: "TypeScript", src: typescript },
 ];
+
+export const images = {
+  dp2,
+  imagify,
+  zentry
+}
