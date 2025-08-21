@@ -20,7 +20,7 @@ const Footer = () => {
         <Link to="/contact">
           <Button initialText="Contact Me" hoverText="Contact Me" />
         </Link>
-        <div className="flex sm:hidden flex-row gap-6 pt-8">
+        <div className="flex sm:hidden flex-row gap-6 pt-8 text-dim">
           <span>
             <a
               href="https://www.linkedin.com/in/coderguyshubham"
@@ -52,11 +52,11 @@ const Footer = () => {
       </div>
       <div className="flex flex-col max-w-[1200px] items-center w-full md:flex-row justify-between mt-8">
         <span>
-          <p className="font-satoshi-regular text-sm mb-14 md:text-left sm:mb-0 text-center">
+          <p className="font-satoshi-regular text-sm text-dim mb-14 md:text-left sm:mb-0 text-center">
             © 2025 Shubham Singh. All rights reserved.
           </p>
         </span>
-        <div className="hidden sm:flex flex-row gap-6">
+        <div className="hidden sm:flex flex-row gap-6 text-dim">
           <span>
             <a
               href="https://www.linkedin.com/in/coderguyshubham"

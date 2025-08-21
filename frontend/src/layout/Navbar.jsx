@@ -12,30 +12,53 @@ import DarkMode from "@/utilities/DarkMode";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(false);
   const [useGlass, setUseGlass] = useState(false); // user’s choice
+
+  // const [darkMode, setDarkMode] = useState(false);
+
+  // useEffect(() => {
+  //   const savedTheme = localStorage.getItem("theme");
+  //   if (savedTheme === "dark") {
+  //     setDarkMode(true);
+  //     document.documentElement.setAttribute("data-theme", "dark");
+  //   } else {
+  //     document.documentElement.setAttribute("data-theme", "light");
+  //   }
+  // }, []);
+
+  // const toggleTheme = () => {
+  //   if (darkMode) {
+  //     document.documentElement.setAttribute("data-theme", "light");
+  //     localStorage.setItem("theme", "light");
+  //   } else {
+  //     document.documentElement.setAttribute("data-theme", "dark");
+  //     localStorage.setItem("theme", "dark");
+  //   }
+  //   setDarkMode(!darkMode);
+  // };
+
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme === "dark";
+  });
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setDarkMode(true);
-      document.documentElement.setAttribute("data-theme", "dark");
-    } else {
-      document.documentElement.setAttribute("data-theme", "light");
-    }
+    const isDark = savedTheme === "dark";
+
+    document.documentElement.setAttribute(
+      "data-theme",
+      isDark ? "dark" : "light"
+    );
   }, []);
 
   const toggleTheme = () => {
-    if (darkMode) {
-      document.documentElement.setAttribute("data-theme", "light");
-      localStorage.setItem("theme", "light");
-    } else {
-      document.documentElement.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
-    }
+    const newTheme = darkMode ? "light" : "dark";
+
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
     setDarkMode(!darkMode);
   };
-
   const menuItems = [
     {
       href: "/",
@@ -151,9 +174,9 @@ const Navbar = () => {
             className="backdrop-blur-lg border-1 flex-center rounded-full h-10 w-10 z-50 text-primary border-carousel-border"
           >
             {darkMode ? (
-              <LucideMoon width={20} height={20} strokeWidth={2} />
+              <LucideMoon width={18} height={18} strokeWidth={2} />
             ) : (
-              <LucideSun width={20} height={20} strokeWidth={2} />
+              <LucideSun width={18} height={18} strokeWidth={2} />
             )}
           </button>
           <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-10 bg-gradient-to-b from-nav-gradient to-transparent"></div>
@@ -205,7 +228,7 @@ const Navbar = () => {
             <ul className="w-full backdrop-blur-md flex justify-evenly rounded-t-3xl border-t font-satoshi-regular text-primary text-xs bg-navbar-bg border-carousel-border">
               {menuItems.map((item, index) => (
                 <li key={index} className="p-4">
-                  <a  href={item.href} className="flex-center flex-col gap-1">
+                  <a href={item.href} className="flex-center flex-col gap-1">
                     {item.icon}
                     <span>{item.label}</span>
                   </a>
