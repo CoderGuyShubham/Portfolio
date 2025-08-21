@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Button = ({ initialText = "Know me better", hoverText = "About me" }) => {
   return (
-    <StyledWrapper hoverText={hoverText}>
+    <StyledWrapper>
       <div className="btn">
         <span data-text={hoverText}>{initialText}</span>
       </div>
@@ -17,7 +17,7 @@ const StyledWrapper = styled.div`
 
   .btn {
     background: transparent;
-    border: 1px solid #141414;
+    border: 1px solid var(--primary);
     outline: none;
     padding: 8px 30px; /* smaller padding */
     height: 45px; /* smaller height */
@@ -42,7 +42,7 @@ const StyledWrapper = styled.div`
     position: absolute;
     left: 0;
     bottom: 0;
-    background: black;
+    background: var(--button-bg);
     transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1),
       border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
     width: 100%;
@@ -62,7 +62,7 @@ const StyledWrapper = styled.div`
     font-weight: 500;
     overflow: hidden;
     position: relative;
-    color: black;
+    color: var(--primary);
     z-index: 1;
     font-family: "Satoshi-Medium", sans-serif;
   }
@@ -80,7 +80,7 @@ const StyledWrapper = styled.div`
     bottom: 0;
     z-index: 1;
     transform: translate(-50%, 100%);
-    color: white;
+    color: var(--button-text);
     font-family: "Satoshi-Medium", sans-serif;
   }
 

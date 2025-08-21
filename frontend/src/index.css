@@ -50,16 +50,20 @@
   --font-satoshi-variableitalic: "Satoshi-VariableItalic", sans-serif;
   --color-body-primary: var(--body-background-primary);
   --color-body-secondary: var(--body-background-secondary);
+  --color-button-bg: var(--button-bg);
+  --color-button-text: var(--button-text);
   --color-navbar-bg: var(--navbar-bg);
   --color-primary: var(--primary);
   /* --color-typing-faded: var(--typing-start);
   --color-typing-primary: var(--typing-end); */
   --color-highlight: var(--highlight);
   --color-toggle-hover: var(--toggle-hover);
+  --color-hr-color: var(--hr-color);
   /* --icon-highlight: var(--highlight); */
   --color-dim: var(--dim);
   --color-nav-elements-hover: var(--nav-elements-hover);
   --color-nav-gradient: var(--nav-gradient);
+  --color-carousel-gradient: var(--carousel-gradient);
   --color-carousel-text: var(--carousel-text);
   --color-carousel-bg: var(--carousel-bg);
   --color-carousel-border: var(--carousel-border);
@@ -69,15 +73,19 @@
 :root{
   --body-background-primary: #f6f9fa;
   --body-background-secondary: #fff;
+  --button-bg: #0a0a0a;
+  --button-text: #f6f7ff;
   --navbar-bg: #fffc;
   --primary: #0a0a0a;
   --highlight: #30af5b;
   --typing-start: #c8c8ca;
   --typing-end: #0a0a0a;
   --toggle-hover: #f3f4f6;
+  --hr-color: #e8ecf3;
   --dim: #0a0a0a;
   --nav-elements-hover: #0a0a0a;
   --nav-gradient: #d5d5d5;
+  --carousel-gradient: #f6f9fa;
   --carousel-text: #cbd5e1;
   --carousel-bg: #f6f9fa;
   --carousel-border: #e2e8f0;
@@ -87,15 +95,19 @@
 [data-theme="dark"] {
   --body-background-primary: #0a0a0d;
   --body-background-secondary: #111017;
+  --button-bg: #f6f7ff;
+  --button-text: #0a0a0a;
   --navbar-bg: #0b0b0d;
   --primary: #f6f7ff;
   --typing-start: #3a3a3d;
   --typing-end: #f6f7ff;
   --toggle-hover: #27272a;
   --highlight: #b5ff6d;
+  --hr-color: #121217;
   --dim: #a9a9bd;
   --nav-elements-hover: #f6f7ff;
   --nav-gradient: #0a0a0a;
+  --carousel-gradient: #0a0a0a;
   --carousel-text: #2c2c35;
   --carousel-bg: #191920;
   --carousel-border: #19181f;

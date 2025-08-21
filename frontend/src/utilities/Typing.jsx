@@ -6,16 +6,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ScrollTextWordByWord() {
   const containerRef = useRef(null);
-  console.log(
-    "faded:",
-    getComputedStyle(document.documentElement).getPropertyValue(
-      "--typing-start"
-    ),
-    "primary:",
-    getComputedStyle(document.documentElement).getPropertyValue(
-      "--typing-end"
-    )
-  );
 
   useLayoutEffect(() => {
     const el = containerRef.current;

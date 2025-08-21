@@ -148,7 +148,7 @@ const Navbar = () => {
           </a>
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="backdrop-blur-lg border-1 flex-center rounded-full h-10 w-10 z-50 text-primary"
+            className="backdrop-blur-lg border-1 flex-center rounded-full h-10 w-10 z-50 text-primary border-carousel-border"
           >
             {darkMode ? (
               <LucideMoon width={20} height={20} strokeWidth={2} />
@@ -202,10 +202,10 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="w-full flex-center fixed bottom-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out">
-            <ul className="w-full backdrop-blur-md flex justify-evenly rounded-t-3xl border-t font-satoshi-regular text-primary text-xs bg-navbar-bg border-[#e2e8f0]">
+            <ul className="w-full backdrop-blur-md flex justify-evenly rounded-t-3xl border-t font-satoshi-regular text-primary text-xs bg-navbar-bg border-carousel-border">
               {menuItems.map((item, index) => (
                 <li key={index} className="p-4">
-                  <a href={item.href} className="flex-center flex-col gap-1">
+                  <a  href={item.href} className="flex-center flex-col gap-1">
                     {item.icon}
                     <span>{item.label}</span>
                   </a>

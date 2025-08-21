@@ -30,8 +30,8 @@ const Header = () => {
         {/* Description with divider */}
         <span>
           <div className="md:flex-center mt-8 flex items-center flex-col gap-4 md:flex-row">
-            <div className="h-[1px] bg-[#e8ecf3] w-full"></div>
-            <p className="font-satoshi-regular w-full leading-[1.4]">
+            <div className="h-[1px] bg-hr-color w-full"></div>
+            <p className="font-satoshi-regular w-full leading-[1.4] text-dim">
               I work with brands globally to build pixel-perfect, engaging, and
               accessible digital experiences that drive results and achieve
               business goals.
@@ -43,7 +43,7 @@ const Header = () => {
         <span>
           <div className="font-satoshi-regular mt-8 flex flex-col justify-between gap-4 md:flex-row md:items-center">
             {/* Social Links */}
-            <ul className="hidden h-fit gap-4 md:flex uppercase text-sm">
+            <ul className="hidden h-fit gap-4 md:flex uppercase text-sm text-dim">
               <li>
                 <a
                   target="_blank"
