@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import GlassSurface from "../utilities/GlassSurface";
 import {
-  import GlassSurface from "../utilities/GlassSurface";
   LucideHouse,
   LucideLayoutDashboard,
   LucideMoon,
