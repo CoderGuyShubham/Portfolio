@@ -66,6 +66,8 @@
   --font-satoshi-variableitalic: "Satoshi-VariableItalic", sans-serif;
   --color-body-primary: var(--body-background-primary);
   --color-body-secondary: var(--body-background-secondary);
+  --color-input-bg: var(--input-bg);
+  --color-input-border: var(--input-border);
   --color-button-bg: var(--button-bg);
   --color-button-text: var(--button-text);
   --color-navbar-bg: var(--navbar-bg);
@@ -86,6 +88,8 @@
 :root{
   --body-background-primary: #f6f9fa;
   --body-background-secondary: #fff;
+  --input-bg: #fff;
+  --input-border: #e5eaf0;
   --button-bg: #0a0a0a;
   --button-text: #f6f7ff;
   --navbar-bg: #fffc;
@@ -108,6 +112,8 @@
 [data-theme="dark"] {
   --body-background-primary: #0a0a0d;
   --body-background-secondary: #111017;
+  --input-bg: transparent;
+  --input-border: #2c2c35;
   --button-bg: #f6f7ff;
   --button-text: #0a0a0a;
   --navbar-bg: #0b0b0d;

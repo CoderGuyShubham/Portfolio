@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-body w-full py-10 flex items-center flex-col h-auto px-4 md:px-10">
       <div className="bg-body-secondary rounded-3xl flex justify-center flex-col max-w-[1200px] w-full py-14 px-6 md:px-12 items-center">
-        <div className="rounded-4xl flex-center gap-2 bg-work-btn px-4 py-2">
+        <div className="rounded-full flex-center gap-2 bg-work-btn px-4 py-2">
           <span className="relative flex h-1.5 w-1.5">
             <span className="bg-highlight absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span>
             <span className="bg-highlight relative inline-flex h-full w-full rounded-full"></span>
