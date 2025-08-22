@@ -7,10 +7,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  /* transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; */
 }
 
-/* @custom-variant dark (&:where(.dark, .dark *)); */
 
 .theme-transition *{
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
@@ -44,7 +42,7 @@
 }
 .slide-animation {
   display: flex;
-  animation: slide 60s linear infinite; /* adjust duration as needed */
+  animation: slide 60s linear infinite;
 }
 @theme {
   --font-clash-extralight: "ClashDisplay-Extralight", sans-serif;
@@ -72,12 +70,9 @@
   --color-button-text: var(--button-text);
   --color-navbar-bg: var(--navbar-bg);
   --color-primary: var(--primary);
-  /* --color-typing-faded: var(--typing-start);
-  --color-typing-primary: var(--typing-end); */
   --color-highlight: var(--highlight);
   --color-toggle-hover: var(--toggle-hover);
   --color-hr-color: var(--hr-color);
-  /* --icon-highlight: var(--highlight); */
   --color-dim: var(--dim);
   --color-nav-elements-hover: var(--nav-elements-hover);
   --color-nav-gradient: var(--nav-gradient);

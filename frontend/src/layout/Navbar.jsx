@@ -1,4 +1,9 @@
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
+  import GlassSurface from "../utilities/GlassSurface";
   LucideHouse,
   LucideLayoutDashboard,
   LucideMoon,
@@ -6,61 +11,80 @@ import {
   LucideSmile,
   LucideSun,
 } from "lucide-react";
-import React, { useState, useEffect } from "react";
-import GlassSurface from "../utilities/GlassSurface";
-import { Link } from "react-router-dom";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
-  const [useGlass, setUseGlass] = useState(false); // user’s choice
-
+  const [useGlass, setUseGlass] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
-      return true;
-    } else {
-      document.documentElement.setAttribute("data-theme", "light");
-      return false;
-    }
+    const isDark = savedTheme === "dark";
+    document.documentElement.setAttribute(
+      "data-theme",
+      isDark ? "dark" : "light"
+    );
+    return isDark;
   });
+
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    if (window.innerWidth >= 640) {
+      // smooth shrink
+      gsap.to(navbarRef.current, {
+        width: "40%", // shrink to 40%
+        scrollTrigger: {
+          trigger: document.documentElement,
+          start: "top top",
+          end: "+=250",
+          scrub: 0.5,
+        },
+      });
+
+      // instant background + border toggle
+      ScrollTrigger.create({
+        trigger: document.documentElement,
+        start: "top+=1 top",
+        onEnter: () => {
+          navbarRef.current.style.backgroundColor = "var(--navbar-bg)";
+          navbarRef.current.style.borderColor = "var(--carousel-border)";
+        },
+        onLeaveBack: () => {
+          navbarRef.current.style.backgroundColor = "transparent";
+          navbarRef.current.style.borderColor = "transparent";
+        },
+      });
+    }
+  }, []);
 
   const toggleTheme = () => {
     const root = document.documentElement;
-    root.classList.add("theme-transition");
-
-    // Determine the new theme first
     const newTheme = darkMode ? "light" : "dark";
-    const targetColor = newTheme === "dark" ? "#0a0a0d" : "#f6f9fa";
+    const target = newTheme === "dark" ? "#0a0a0d" : "#f6f9fa";
 
-    // Create overlay div
     const overlay = document.createElement("div");
-    overlay.style.position = "fixed";
-    overlay.style.top = "0";
-    overlay.style.left = "0";
-    overlay.style.width = "100vw";
-    overlay.style.height = "100vh";
-    overlay.style.backgroundColor = targetColor; // ← target theme
-    overlay.style.clipPath = "circle(0% at 100% 0%)"; // start top-right
-    overlay.style.zIndex = "9999";
-    overlay.style.pointerEvents = "none";
-    overlay.style.transition = "clip-path 1s ease-in-out"; // visible duration
-
+    Object.assign(overlay.style, {
+      position: "fixed",
+      inset: "0",
+      background: target,
+      clipPath: "circle(0% at 100% 0%)",
+      zIndex: "9999",
+      pointerEvents: "none",
+      transition: "clip-path 0.8s ease-in-out",
+    });
     document.body.appendChild(overlay);
 
-    // Start animation
-    setTimeout(() => {
-      overlay.style.clipPath = "circle(200% at 100% 0%)"; // expand fully
-    }, 10);
+    requestAnimationFrame(() => {
+      overlay.style.clipPath = "circle(200% at 100% 0%)";
+    });
 
-    // After animation, set theme and remove overlay
     setTimeout(() => {
       root.setAttribute("data-theme", newTheme);
       localStorage.setItem("theme", newTheme);
       setDarkMode(!darkMode);
+    }, 450);
 
-      document.body.removeChild(overlay);
-      root.classList.remove("theme-transition");
-    }, 710);
+    overlay.addEventListener("transitionend", () => overlay.remove());
   };
 
   const menuItems = [
@@ -88,7 +112,10 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="bg-navbar-bg fixed sm:flex z-50 items-center justify-between max-w-[1280px] w-full px-10 py-2 rounded-[40px] top-4 left-1/2 transform -translate-x-1/2 hidden">
+      <nav
+        ref={navbarRef}
+        className="border border-transparent backdrop-blur-lg fixed sm:flex z-50 items-center justify-between px-6 py-2 max-w-[1250px] w-full rounded-[40px] top-4 left-1/2 transform -translate-x-1/2 hidden"
+      >
         <Link to="/" className="font-clash-medium text-xl text-primary">
           SS
         </Link>
@@ -203,9 +230,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Toggle button to switch navbar style */}
-
-        {/* Conditional rendering */}
         {useGlass ? (
           <div className="border-[0px] border-white text-primary rounded-full max-w-[400px] flex-center fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[75%] mx-auto transition-all duration-500 ease-in-out">
             <GlassSurface
@@ -250,82 +274,6 @@ const Navbar = () => {
             </ul>
           </div>
         )}
-        {/* <div className="w-full flex-center fixed bottom-0 left-0 right-0 z-50">
-          <ul className="w-full backdrop-blur-md flex justify-evenly rounded-t-3xl border-t font-satoshi-regular text-xs bg-[#fffc]">
-            <li className="p-4">
-              <a href="/" className="flex-center flex-col gap-1">
-                <LucideHouse width={18} height={18} strokeWidth={2} />
-                <span>Home</span>
-              </a>
-            </li>
-            <li className="p-4">
-              <a href="/about" className="flex-center flex-col gap-1">
-                <LucideSmile width={18} height={18} strokeWidth={2} />
-                <span className="">About</span>
-              </a>
-            </li>
-            <li className="p-4">
-              <a href="/projects" className="flex-center flex-col gap-1">
-                <LucideLayoutDashboard width={18} height={18} strokeWidth={2} />
-                <span className="">Projects</span>
-              </a>
-            </li>
-            <li className="p-4">
-              <a href="/contact" className="flex-center flex-col gap-1">
-                <LucideSend width={18} height={18} strokeWidth={2} />
-                <span className="">Contact</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="border-[0px] border-white rounded-full max-w-[400px] flex-center fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[75%] mx-auto">
-          <GlassSurface
-            width="100%"
-            // height="100%"
-            borderRadius={30}
-            displace={0}
-            distortionScale={15}
-            redOffset={2}
-            greenOffset={6}
-            blueOffset={10}
-            brightness={95}
-            opacity={0.15}
-            backgroundOpacity={0}
-            saturation={1}
-            blur={0}
-            mixBlendMode="difference"
-            className="transform-gpu will-change-transform"
-            // style={{willChange: "transform, backdropFilter"}}
-          >
-            <ul className="font-satoshi-regular text-xs flex w-full items-center justify-between">
-              <li className="flex-1">
-                <a href="/" className="flex-center flex-col gap-1">
-                  <LucideHouse width={18} height={18} strokeWidth={2} />
-                  <span className="">Home</span>
-                </a>
-              </li>
-              <li className="flex-1">
-                <a href="/about" className="flex-center flex-col gap-1">
-                  <LucideSmile width={18} height={18} strokeWidth={2} />
-                  <span className="">About</span>
-                </a>
-              </li>
-              <li className="flex-1">
-                <a href="/projects" className="flex-center flex-col gap-1">
-                  <LucideLayoutDashboard width={18} height={18} strokeWidth={2} />
-                  <span className="">Projects</span>
-                </a>
-              </li>
-              <li className="flex-1">
-                <a href="/contact" className="flex-center flex-col gap-1">
-                  <LucideSend width={18} height={18} strokeWidth={2} />
-                  <span className="">Contact</span>
-                </a>
-              </li>
-            </ul>
-          </GlassSurface>
-        </div> */}
       </nav>
     </div>
   );
