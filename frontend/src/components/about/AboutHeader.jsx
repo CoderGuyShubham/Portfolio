@@ -3,7 +3,7 @@ import CircularText from "../../utilities/CircularText";
 import { ArrowUpRight } from "lucide-react";
 import Button from "../../utilities/Button";
 import { Link } from "react-router-dom";
-import { images } from "@/assets/assets"
+import { images } from "@/assets/assets";
 
 const AboutHeader = () => {
   return (
@@ -40,7 +40,7 @@ const AboutHeader = () => {
               </div>
             </Link>
           </div>
-          <div className=" w-full space-y-6">
+          <div className="w-full space-y-6">
             <h1 className="text-balance font-clash-medium text-5xl sm:text-5xl lg:text-7xl">
               A <span className="text-highlight">creative developer</span> &
               digital designer

@@ -27,7 +27,6 @@ const Header = () => {
       className="px-4 md:px-10 h-auto flex flex-col items-center pt-36 md:pt-44 pb-16 md:pb-24"
     >
       <section className="w-full max-w-[1200px] flex flex-col justify-center">
-        {/* Intro */}
         <span data-aos="zoom-out" data-aos-duration="300">
           <p className="flex gap-2 font-satoshi-regular text-base items-center">
             <span className="text-highlight">
@@ -37,7 +36,6 @@ const Header = () => {
           </p>
         </span>
 
-        {/* Heading */}
         <span>
           <h1 className="text-5xl md:text-7xl font-clash-medium max-w-4xl mt-8">
             Crafting{" "}
@@ -46,7 +44,6 @@ const Header = () => {
           </h1>
         </span>
 
-        {/* Description with divider */}
         <span>
           <div className="md:flex-center mt-8 flex items-center flex-col gap-4 md:flex-row">
             <div className="h-[1px] bg-hr-color w-full"></div>
@@ -58,10 +55,8 @@ const Header = () => {
           </div>
         </span>
 
-        {/* Links + Button */}
         <span>
           <div className="font-satoshi-regular mt-8 flex flex-col justify-between gap-4 md:flex-row md:items-center">
-            {/* Social Links */}
             <ul className="hidden h-fit gap-4 md:flex uppercase text-sm text-dim">
               <li>
                 <a

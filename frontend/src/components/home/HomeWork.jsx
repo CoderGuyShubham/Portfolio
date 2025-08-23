@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Work = () => {
   return (
     <div className="w-full flex-center flex-col px-4 md:px-10">
-      <div className="max-w-[1200px] ">
+      <div className="max-w-[1200px]">
         <span>
           <div className="flex gap-2 text-highlight">
             <SparkleIcon width={18} height={18}/>

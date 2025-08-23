@@ -1,12 +1,66 @@
 import { images } from "@/assets/assets";
 import Button from "@/utilities/Button";
 import { SparkleIcon } from "lucide-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { LuGithub, LuLinkedin, LuMail } from "react-icons/lu";
+import { ToastContainer, toast } from "react-toastify";
 
 const ContactHeader = () => {
+  const [isDark, setIsDark] = useState(
+    document.documentElement.getAttribute("data-theme") === "dark"
+  );
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.getAttribute("data-theme") === "dark");
+    });
+
+    observer.observe(document.documentElement, { attributes: true });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    toast.info("Sending...");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "c98ce9a0-4f29-4ae5-93ec-a7e73e6c91b0");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success("Form Submitted Successfully!");
+        event.target.reset();
+      } else {
+        if (data.errors) {
+          Object.values(data.errors).forEach((errMsg) => {
+            toast.error(errMsg);
+          });
+        } else {
+          toast.error(data.message || "Something went wrong!");
+        }
+        console.log("Error", data);
+      }
+    } catch (error) {
+      toast.error("Failed to send. Please try again.");
+      console.error(error);
+    }
+  };
+
   return (
     <div className="w-full h-full flex-center flex-col px-4 md:px-10 pt-36 md:pt-44">
+      <ToastContainer
+        theme={isDark ? "dark" : "light"}
+        position="bottom-right"
+        autoClose={2000}
+        newestOnTop
+      />
       <section className="w-full max-w-[1200px]">
         <span>
           <div className="text-highlight flex gap-2 mb-4 items-center">
@@ -22,7 +76,7 @@ const ContactHeader = () => {
           </h1>
         </span>
         <div className="w-full flex flex-col sm:flex-row gap-10 sm:gap-8 font-satoshi-medium text-sm">
-          <form action="" className="w-full space-y-4">
+          <form onSubmit={onSubmit} className="w-full space-y-4">
             <div className="space-y-2 mb-3">
               <label className="leading-none" htmlFor="fullName">
                 Full Name
@@ -31,7 +85,7 @@ const ContactHeader = () => {
                 type="text"
                 placeholder=""
                 id="fullName"
-                name="fullName"
+                name="name"
                 required
                 className="text-dim flex h-11 w-full rounded-xl border border-input-border bg-input-bg  px-3 py-2 mt-1 ring-offset-body-secondary focus:outline-hidden focus:ring-2 focus:ring-highlight focus:ring-offset-2 "
               />
@@ -41,7 +95,7 @@ const ContactHeader = () => {
                 Email
               </label>
               <input
-                type="text"
+                type="email"
                 placeholder=""
                 id="email"
                 name="email"
@@ -62,9 +116,11 @@ const ContactHeader = () => {
                 className="text-dim min-h-[100px] flex h-11 w-full rounded-xl border border-input-border  bg-input-bg  px-3 py-2 mt-1 ring-offset-body-secondary focus:outline-hidden focus:ring-2 focus:ring-highlight focus:ring-offset-2 resize-none"
               />
             </div>
-            <Button initialText="Submit" hoverText="Submit" />
+            <button type="submit">
+              <Button initialText="Submit" hoverText="Submit" />
+            </button>
           </form>
-          <div className="bg-body-secondary h-full w-full rounded-3xl p-6">
+          <div className="bg-body-secondary h-full w-full rounded-3xl p-6 shadow-xs">
             <span>
               <div className="rounded-full flex-center gap-2 bg-work-btn px-4 py-2 mb-4 w-fit">
                 <span className="relative flex h-1.5 w-1.5">

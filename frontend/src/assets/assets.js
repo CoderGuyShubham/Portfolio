@@ -26,14 +26,14 @@ import zentry from "./Zentry.png";
 
 
 export const assets = [
-  { title: "Angular", src: angular },
+  // { title: "Angular", src: angular },
   { title: "AWS", src: aws },
   { title: "CSS", src: css },
-  { title: "Cypress", src: cypress },
+  // { title: "Cypress", src: cypress },
   { title: "Docker", src: docker },
   { title: "Express.js", src: expressjs },
   { title: "Figma", src: figma },
-  { title: "Firebase", src: firebase },
+  // { title: "Firebase", src: firebase },
   { title: "Framer Motion", src: framer_motion },
   { title: "GIT", src: git },
   { title: "GSAP", src: gsap },
@@ -45,9 +45,9 @@ export const assets = [
   { title: "Node.js", src: nodejs },
   { title: "PostgreSQL", src: postgresql },
   { title: "React.js", src: reactjs },
-  { title: "Redux", src: redux },
+  // { title: "Redux", src: redux },
   { title: "Tailwind CSS", src: tailwindcss },
-  { title: "TypeScript", src: typescript },
+  // { title: "TypeScript", src: typescript },
 ];
 
 export const images = {
