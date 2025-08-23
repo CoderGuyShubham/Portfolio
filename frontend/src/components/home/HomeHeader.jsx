@@ -27,7 +27,7 @@ const Header = () => {
       className="px-4 md:px-10 h-auto flex flex-col items-center pt-36 md:pt-44 pb-16 md:pb-24"
     >
       <section className="w-full max-w-[1200px] flex flex-col justify-center">
-        <span data-aos="zoom-out" data-aos-duration="300">
+        <span data-aos="fade" data-aos-duration="300">
           <p className="flex gap-2 font-satoshi-regular text-base items-center">
             <span className="text-highlight">
               <HandIcon width={48} height={48} />
