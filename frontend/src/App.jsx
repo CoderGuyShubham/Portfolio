@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Projects from "./pages/Projects";
 
 const App = () => {
   useEffect(() => {
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/projects" element={<Projects />} />
       </Routes>
     </div>
   );
