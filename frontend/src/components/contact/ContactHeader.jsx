@@ -62,7 +62,13 @@ const ContactHeader = () => {
         newestOnTop
       />
       <section className="w-full max-w-[1200px]">
-        <span>
+        <span
+          data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="0"
+        >
           <div className="text-highlight flex gap-2 mb-4 items-center">
             <SparkleIcon height={18} width={18} />
             <p className="uppercase font-clash-variable [word-spacing:4px] text-sm">
@@ -70,14 +76,27 @@ const ContactHeader = () => {
             </p>
           </div>
         </span>
-        <span>
+        <span
+          data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="100"
+        >
           <h1 className="w-full sm:w-2/3 lg:w-1/2 [word-spacing:4px] text-5xl font-clash-medium mb-8 leading-[1.2]">
             Let's start a project together
           </h1>
         </span>
         <div className="w-full flex flex-col sm:flex-row gap-10 sm:gap-8 font-satoshi-medium text-sm">
           <form onSubmit={onSubmit} className="w-full space-y-4">
-            <div className="space-y-2 mb-3">
+            <div
+              data-aos="fade"
+              data-aos-offset="0"
+              data-aos-duration="300"
+              data-aos-easing="ease-in-out-sine"
+              data-aos-delay="200"
+              className="space-y-2 mb-3"
+            >
               <label className="leading-none" htmlFor="fullName">
                 Full Name
               </label>
@@ -90,7 +109,14 @@ const ContactHeader = () => {
                 className="text-dim flex h-11 w-full rounded-xl border border-input-border bg-input-bg  px-3 py-2 mt-1 ring-offset-body-secondary focus:outline-hidden focus:ring-2 focus:ring-highlight focus:ring-offset-2 "
               />
             </div>
-            <div className="space-y-2 mb-3">
+            <div
+              data-aos="fade"
+              data-aos-offset="0"
+              data-aos-duration="300"
+              data-aos-easing="ease-in-out-sine"
+              data-aos-delay="300"
+              className="space-y-2 mb-3"
+            >
               <label className="leading-none" htmlFor="email">
                 Email
               </label>
@@ -103,7 +129,14 @@ const ContactHeader = () => {
                 className="text-dim flex h-11 w-full rounded-xl border border-input-border bg-input-bg px-3 py-2 mt-1 ring-offset-body-secondary focus:outline-hidden focus:ring-2 focus:ring-highlight focus:ring-offset-2"
               />
             </div>
-            <div className="space-y-2 mb-4">
+            <div
+              data-aos="fade"
+              data-aos-offset="0"
+              data-aos-duration="300"
+              data-aos-easing="ease-in-out-sine"
+              data-aos-delay="400"
+              className="space-y-2 mb-4"
+            >
               <label className="leading-none" htmlFor="message">
                 Message
               </label>
@@ -116,12 +149,25 @@ const ContactHeader = () => {
                 className="text-dim min-h-[100px] flex h-11 w-full rounded-xl border border-input-border  bg-input-bg  px-3 py-2 mt-1 ring-offset-body-secondary focus:outline-hidden focus:ring-2 focus:ring-highlight focus:ring-offset-2 resize-none"
               />
             </div>
-            <button type="submit">
+            <button
+              data-aos="fade"
+              data-aos-offset="0"
+              data-aos-duration="300"
+              data-aos-easing="ease-in-out-sine"
+              data-aos-delay="500"
+              type="submit"
+            >
               <Button initialText="Submit" hoverText="Submit" />
             </button>
           </form>
           <div className="bg-body-secondary h-full w-full rounded-3xl p-6 shadow-xs">
-            <span>
+            <span
+              data-aos="fade"
+              data-aos-offset="0"
+              data-aos-duration="300"
+              data-aos-easing="ease-in-out-sine"
+              data-aos-delay="200"
+            >
               <div className="rounded-full flex-center gap-2 bg-work-btn px-4 py-2 mb-4 w-fit">
                 <span className="relative flex h-1.5 w-1.5">
                   <span className="bg-highlight absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span>
@@ -132,7 +178,11 @@ const ContactHeader = () => {
                 </p>
               </div>
             </span>
-            <span>
+            <span data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="300">
               <img
                 src={images.dp2}
                 alt=""
@@ -141,16 +191,24 @@ const ContactHeader = () => {
                 width={100}
               />
             </span>
-            <span>
+            <span data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="400">
               <p className="font-satoshi-regular mt-4 mb-6 text-base text-dim">
                 My inbox is always open, Whether you have a project or just want
                 to say Hi. I would love to hear from you. Feel free to contact
                 me and I'll get back to you.
               </p>
             </span>
-            <span>
+            <span >
               <div className="text-dim flex items-center justify-start gap-6">
-                <span>
+                <span data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="500">
                   <a
                     href="https://www.linkedin.com/in/coderguyshubham"
                     rel="noopener noreferrer"
@@ -159,7 +217,11 @@ const ContactHeader = () => {
                     <LuLinkedin size={20} />
                   </a>
                 </span>
-                <span>
+                <span data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="600">
                   <a
                     href="https://github.com/CoderGuyShubham"
                     rel="noopener noreferrer"
@@ -168,7 +230,11 @@ const ContactHeader = () => {
                     <LuGithub size={20} />
                   </a>
                 </span>
-                <span>
+                <span data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="700">
                   <a
                     href="mailto:singhshubham889900@gmail.com"
                     rel="noopener noreferrer"

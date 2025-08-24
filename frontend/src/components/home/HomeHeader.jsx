@@ -27,7 +27,13 @@ const Header = () => {
       className="px-4 md:px-10 h-auto flex flex-col items-center pt-36 md:pt-44 pb-16 md:pb-24"
     >
       <section className="w-full max-w-[1200px] flex flex-col justify-center">
-        <span data-aos="fade" data-aos-duration="300">
+        <span
+          data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="0"
+        >
           <p className="flex gap-2 font-satoshi-regular text-base items-center">
             <span className="text-highlight">
               <HandIcon width={48} height={48} />
@@ -36,7 +42,13 @@ const Header = () => {
           </p>
         </span>
 
-        <span>
+        <span
+          data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="200"
+        >
           <h1 className="text-5xl md:text-7xl font-clash-medium max-w-4xl mt-8">
             Crafting{" "}
             <span className="text-highlight">purpose driven experiences</span>{" "}
@@ -44,7 +56,13 @@ const Header = () => {
           </h1>
         </span>
 
-        <span>
+        <span
+          data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="400"
+        >
           <div className="md:flex-center mt-8 flex items-center flex-col gap-4 md:flex-row">
             <div className="h-[1px] bg-hr-color w-full"></div>
             <p className="font-satoshi-regular w-full leading-[1.4] text-dim">
@@ -55,10 +73,22 @@ const Header = () => {
           </div>
         </span>
 
-        <span>
+        <span
+          data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="600"
+        >
           <div className="font-satoshi-regular mt-8 flex flex-col justify-between gap-4 md:flex-row md:items-center">
             <ul className="hidden h-fit gap-4 md:flex uppercase text-sm text-dim">
-              <li>
+              <li
+                data-aos="fade"
+                data-aos-offset="0"
+                data-aos-duration="300"
+                data-aos-easing="ease-in-out-sine"
+                data-aos-delay="600"
+              >
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
@@ -69,7 +99,13 @@ const Header = () => {
                   <ArrowUpRight width={16} height={16} />
                 </a>
               </li>
-              <li>
+              <li
+                data-aos="fade"
+                data-aos-offset="0"
+                data-aos-duration="300"
+                data-aos-easing="ease-in-out-sine"
+                data-aos-delay="800"
+              >
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
@@ -80,7 +116,13 @@ const Header = () => {
                   <ArrowUpRight width={16} height={16} />
                 </a>
               </li>
-              <li>
+              <li
+                data-aos="fade"
+                data-aos-offset="0"
+                data-aos-duration="300"
+                data-aos-easing="ease-in-out-sine"
+                data-aos-delay="1000"
+              >
                 <a
                   target="_blank"
                   rel="noopener noreferrer"

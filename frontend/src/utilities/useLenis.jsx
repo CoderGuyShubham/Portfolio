@@ -5,7 +5,7 @@ export default function useLenis() {
   useEffect(() => {
     const lenis = new Lenis({
         smoothTouch: true,
-    }); // default smooth scrolling
+    });
 
     function raf(time) {
       lenis.raf(time);

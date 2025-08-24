@@ -35,7 +35,11 @@ const ContactSection = () => {
       <section className="w-full max-w-[1200px] mb-10">
         <div className="flex flex-col sm:flex-row justify-between gap-6 mb-30">
           <div className="">
-            <span>
+            <span data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="0">
               <div className="text-highlight flex gap-2 mb-4 items-center">
                 <SparkleIcon height={18} width={18} />
                 <p className="uppercase font-clash-variable [word-spacing:4px] text-sm">
@@ -43,13 +47,21 @@ const ContactSection = () => {
                 </p>
               </div>
             </span>
-            <span>
+            <span data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="200">
               <h1 className="w-full sm:w-2/3 [word-spacing:4px] text-5xl font-clash-medium mb-8 leading-[1.2]">
                 Have Questions?
               </h1>
             </span>
           </div>
-          <div className="font-satoshi-variable space-y-3 w-full md:w-2/3">
+          <div data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="200" className="font-satoshi-variable space-y-3 w-full md:w-2/3">
             {data.map((item, index) => (
               <div
                 key={index}
@@ -74,13 +86,25 @@ const ContactSection = () => {
           </div>
         </div>
         <footer className="flex flex-col max-w-[1200px] items-center w-full md:flex-row justify-between mt-8">
-          <span>
+          <span
+            data-aos="fade"
+            data-aos-offset="0"
+            data-aos-duration="300"
+            data-aos-easing="ease-in-out-sine"
+            data-aos-delay="0"
+          >
             <p className="font-satoshi-regular text-sm text-dim mb-14 md:text-left sm:mb-0 text-center">
               © 2025 Shubham Singh. All rights reserved.
             </p>
           </span>
           <div className="hidden sm:flex flex-row gap-6 text-dim">
-            <span>
+            <span
+              data-aos="fade"
+              data-aos-offset="0"
+              data-aos-duration="300"
+              data-aos-easing="ease-in-out-sine"
+              data-aos-delay="0"
+            >
               <a
                 href="https://www.linkedin.com/in/coderguyshubham"
                 rel="noopener noreferrer"
@@ -89,7 +113,13 @@ const ContactSection = () => {
                 <LuLinkedin size={20} />
               </a>
             </span>
-            <span>
+            <span
+              data-aos="fade"
+              data-aos-offset="0"
+              data-aos-duration="300"
+              data-aos-easing="ease-in-out-sine"
+              data-aos-delay="200"
+            >
               <a
                 href="https://github.com/CoderGuyShubham"
                 rel="noopener noreferrer"
@@ -98,7 +128,13 @@ const ContactSection = () => {
                 <LuGithub size={20} />
               </a>
             </span>
-            <span>
+            <span
+              data-aos="fade"
+              data-aos-offset="0"
+              data-aos-duration="300"
+              data-aos-easing="ease-in-out-sine"
+              data-aos-delay="400"
+            >
               <a
                 href="mailto:singhshubham889900@gmail.com"
                 rel="noopener noreferrer"

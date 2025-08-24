@@ -113,6 +113,11 @@ const Navbar = () => {
   return (
     <div>
       <nav
+        data-aos="fade-down"
+        data-aos-offset="0"
+        data-aos-duration="500"
+        data-aos-easing="ease-out-back"
+        data-aos-delay="0"
         ref={navbarRef}
         className="border border-transparent backdrop-blur-lg fixed sm:flex z-50 items-center justify-between px-6 py-2 min-w-[450px] max-w-[1250px] w-full rounded-[40px] top-4 left-1/2 transform -translate-x-1/2 hidden"
       >

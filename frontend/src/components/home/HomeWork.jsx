@@ -8,27 +8,55 @@ const Work = () => {
   return (
     <div className="w-full flex-center flex-col px-4 md:px-10">
       <div className="max-w-[1200px]">
-        <span>
+        <span
+          data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="100"
+        >
           <div className="flex gap-2 text-highlight">
-            <SparkleIcon width={18} height={18}/>
+            <SparkleIcon width={18} height={18} />
             <p className="uppercase font-clash-variable [word-spacing:4px] text-sm">
               My Work
             </p>
           </div>
         </span>
-        <span>
+        <span
+          data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="200"
+        >
           <h2 className="font-clash-medium text-5xl mt-4">Selected Projects</h2>
         </span>
-        <span>
+        <span
+          data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="300"
+        >
           <p className="font-satoshi-regular mt-2">
             Here's a curated selection showcasing my expertise and the achieved
             results.
           </p>
         </span>
         <ProjectGrid />
-        <span className="flex justify-center mt-0 md:mt-4">
+        <span
+          data-aos="fade"
+          data-aos-offset="0"
+          data-aos-duration="300"
+          data-aos-easing="ease-in-out-sine"
+          data-aos-delay="0"
+          className="flex justify-center mt-0 md:mt-4"
+        >
           <Link to="/projects">
-            <Button initialText="View All Projects" hoverText="View All Projects" />
+            <Button
+              initialText="View All Projects"
+              hoverText="View All Projects"
+            />
           </Link>
         </span>
       </div>
