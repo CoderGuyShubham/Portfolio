@@ -25,15 +25,15 @@ const AboutHeader = () => {
             />
           </div>
           <Link to="/contact">
-            <div className="absolute bg-white bottom-0 right-0 rounded-full p-2 shadow-md">
+            <div className="absolute bg-body-secondary bottom-0 right-0 rounded-full p-2 shadow-md">
               <CircularText
                 text="LETS TALK • LETS TALK • LETS TALK • LETS TALK • "
                 onHover="slowDown"
                 spinDuration={10}
-                className="font-satoshi-variable font-normal "
+                className="font-satoshi-variable font-normal text-primary"
               />
 
-              <div className="border-[1px] border-gray-300 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-min w-min rounded-full p-6 sm:p-3 lg:p-6 hover:rotate-45 transition-all duration-300 ">
+              <div className="border-[1px] border-input-border absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-min w-min rounded-full p-6 sm:p-3 lg:p-6 hover:rotate-45 transition-all duration-300 ">
                 <ArrowUpRight strokeWidth={1} className="h-4 w-4" />
               </div>
             </div>
