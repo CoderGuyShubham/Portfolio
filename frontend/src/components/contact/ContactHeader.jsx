@@ -178,11 +178,13 @@ const ContactHeader = () => {
                 </p>
               </div>
             </span>
-            <span data-aos="fade"
-          data-aos-offset="0"
-          data-aos-duration="300"
-          data-aos-easing="ease-in-out-sine"
-          data-aos-delay="300">
+            <span
+              data-aos="fade"
+              data-aos-offset="0"
+              data-aos-duration="300"
+              data-aos-easing="ease-in-out-sine"
+              data-aos-delay="300"
+            >
               <img
                 src={images.dp2}
                 alt=""
@@ -191,24 +193,28 @@ const ContactHeader = () => {
                 width={100}
               />
             </span>
-            <span data-aos="fade"
-          data-aos-offset="0"
-          data-aos-duration="300"
-          data-aos-easing="ease-in-out-sine"
-          data-aos-delay="400">
+            <span
+              data-aos="fade"
+              data-aos-offset="0"
+              data-aos-duration="300"
+              data-aos-easing="ease-in-out-sine"
+              data-aos-delay="400"
+            >
               <p className="font-satoshi-regular mt-4 mb-6 text-base text-dim">
                 My inbox is always open, Whether you have a project or just want
                 to say Hi. I would love to hear from you. Feel free to contact
                 me and I'll get back to you.
               </p>
             </span>
-            <span >
+            <span>
               <div className="text-dim flex items-center justify-start gap-6">
-                <span data-aos="fade"
-          data-aos-offset="0"
-          data-aos-duration="300"
-          data-aos-easing="ease-in-out-sine"
-          data-aos-delay="500">
+                <span
+                  data-aos="fade"
+                  data-aos-offset="0"
+                  data-aos-duration="300"
+                  data-aos-easing="ease-in-out-sine"
+                  data-aos-delay="500"
+                >
                   <a
                     href="https://www.linkedin.com/in/coderguyshubham"
                     rel="noopener noreferrer"
@@ -217,11 +223,13 @@ const ContactHeader = () => {
                     <LuLinkedin size={20} />
                   </a>
                 </span>
-                <span data-aos="fade"
-          data-aos-offset="0"
-          data-aos-duration="300"
-          data-aos-easing="ease-in-out-sine"
-          data-aos-delay="600">
+                <span
+                  data-aos="fade"
+                  data-aos-offset="0"
+                  data-aos-duration="300"
+                  data-aos-easing="ease-in-out-sine"
+                  data-aos-delay="600"
+                >
                   <a
                     href="https://github.com/CoderGuyShubham"
                     rel="noopener noreferrer"
@@ -230,11 +238,13 @@ const ContactHeader = () => {
                     <LuGithub size={20} />
                   </a>
                 </span>
-                <span data-aos="fade"
-          data-aos-offset="0"
-          data-aos-duration="300"
-          data-aos-easing="ease-in-out-sine"
-          data-aos-delay="700">
+                <span
+                  data-aos="fade"
+                  data-aos-offset="0"
+                  data-aos-duration="300"
+                  data-aos-easing="ease-in-out-sine"
+                  data-aos-delay="700"
+                >
                   <a
                     href="mailto:singhshubham889900@gmail.com"
                     rel="noopener noreferrer"

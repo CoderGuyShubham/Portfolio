@@ -23,6 +23,9 @@ import typescript from "./TypeScript.svg";
 import dp2 from "./dp2.jpg";
 import imagify from "./Imagify.png";
 import zentry from "./Zentry.png";
+import spotify1 from "./spotify1.png"
+import spotify2 from "./spotify2.png"
+import tts from "./TTS.png"
 
 
 export const assets = [
@@ -53,5 +56,8 @@ export const assets = [
 export const images = {
   dp2,
   imagify,
-  zentry
+  zentry,
+  spotify1,
+  spotify2,
+  tts,
 }
