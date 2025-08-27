@@ -17,7 +17,7 @@ const App = () => {
   }, []);
   useLenis();
   return (
-    <div>
+    <div className="selection:bg-highlight selection:text-body-secondary">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

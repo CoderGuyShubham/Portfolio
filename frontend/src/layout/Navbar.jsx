@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,20 +11,13 @@ import {
   LucideSmile,
   LucideSun,
 } from "lucide-react";
+import { AppContext } from "@/context/AppContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
   const [useGlass, setUseGlass] = useState(false);
-  const [darkMode, setDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const isDark = savedTheme === "dark";
-    document.documentElement.setAttribute(
-      "data-theme",
-      isDark ? "dark" : "light"
-    );
-    return isDark;
-  });
+  const { darkMode, setDarkMode } = useContext(AppContext);
 
   const navbarRef = useRef(null);
 

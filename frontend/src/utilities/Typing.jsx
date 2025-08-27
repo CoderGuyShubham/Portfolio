@@ -1,10 +1,12 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useContext, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { AppContext } from "@/context/AppContext";
+
 
 gsap.registerPlugin(ScrollTrigger);
-
 export default function ScrollTextWordByWord() {
+  const { darkMode } = useContext(AppContext);
   const containerRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -42,7 +44,7 @@ export default function ScrollTextWordByWord() {
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [darkMode]);
 
   const text =
     "I'm Shubham Singh, with over 2+ years of experience in design & development with strong focus on producing high quality & impactful digital experiences. I have worked with some of the most innovative industry leaders to help build their top-notch products.";

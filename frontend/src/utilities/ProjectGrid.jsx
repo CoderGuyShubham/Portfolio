@@ -37,20 +37,20 @@ export default function ProjectGrid() {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-14 py-10 md:py-16">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-10 py-10 md:py-16">
       {projects.map((project, index) => (
         <div key={index}>
           <a
             href={project.link}
             target="_blank"
-            className={`md:hover:cursor-pointer rounded-3xl p-4 md:p-8 ${project.bg} shadow-md flex-center`}
+            className={`md:hover:cursor-pointer rounded-3xl h-52 w-full md:h-72  lg:h-[350px] p-6 lg:p-8 ${project.bg} shadow-md flex-center`}
           >
             {/* Image */}
 
             <img
               src={project.img}
               alt={project.title}
-              className="rounded-2xl shadow-lg h-40 sm:h-64"
+              className="rounded-2xl shadow-lg h-full object-cover w-full"
             />
           </a>
 
